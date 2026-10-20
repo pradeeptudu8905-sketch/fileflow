@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="FileFlow: convert and compress files in your browser." />
+  <title>FileFlow — Your everyday file toolkit</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#"><span class="brand-mark">F</span><span>FileFlow<small>Your everyday file toolkit</small></span></a>
+    <div class="top-actions"><span class="privacy"><span class="dot"></span> Privacy-first processing</span><button id="themeBtn" class="icon-btn" aria-label="Toggle theme">◐</button></div>
+  </header>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">SIMPLE TOOLS. LESS FRICTION.</div>
+      <h1>All your files.<br><span>One simple tool.</span></h1>
+      <p>Convert, compress, and prepare your files in seconds.</p>
+    </section>
+    <section class="workspace">
+      <div class="section-head"><div><h2>Choose a tool</h2><p>Start with one file. No account required.</p></div><span class="step-pill">01 <i> / </i> SELECT</span></div>
+      <div class="tool-grid">
+        <button class="tool-card selected" data-tool="image-compress"><span class="tool-icon mint">▧</span><strong>Compress image</strong><small>JPG, PNG, WebP</small><span class="card-arrow">↗</span></button>
+        <button class="tool-card" data-tool="pdf-jpg"><span class="tool-icon lavender">▤</span><strong>PDF to JPG</strong><small>Each page as an image</small><span class="card-arrow">↗</span></button>
+        <button class="tool-card" data-tool="jpg-pdf"><span class="tool-icon peach">▧</span><strong>JPG to PDF</strong><small>Images into a document</small><span class="card-arrow">↗</span></button>
+        <button class="tool-card" data-tool="ppt-pdf"><span class="tool-icon blue">▣</span><strong>PPT to PDF</strong><small>PowerPoint presentations</small><span class="card-arrow">↗</span></button>
+      </div>
+      <div class="converter-panel">
+        <div class="panel-title"><div><span class="eyebrow" id="toolKicker">IMAGE TOOL</span><h2 id="toolTitle">Compress image</h2><p id="toolDescription">Reduce file size while keeping your image looking good.</p></div><span class="privacy-tag">🔒 Files stay local when possible</span></div>
+        <div class="dropzone" id="dropzone">
+          <input id="fileInput" type="file" hidden />
+          <div class="upload-symbol">↑</div>
+          <h3>Drop your file here</h3><p id="acceptedText">JPG, PNG or WebP · processed in your browser</p>
+          <button id="chooseBtn" class="primary-btn">Choose file</button>
+          <div class="selected-file" id="selectedFile" hidden></div>
+        </div>
+        <div class="options" id="options">
+          <label for="quality">Compression quality <span id="qualityValue">75%</span></label>
+          <input id="quality" type="range" min="20" max="95" value="75" />
+          <p class="helper">Lower quality usually means a smaller file. PNG files may need conversion to JPEG/WebP for large savings.</p>
+        </div>
+        <div class="panel-footer"><span id="statusText">Ready when you are.</span><button id="runBtn" class="primary-btn" disabled>Compress image <span>→</span></button></div>
+        <div id="result" class="result" hidden></div>
+      </div>
+      <div class="bottom-note"><span>✦</span> Images are processed on your device. PDF and Office conversions use your configured local backend.</div>
+    </section>
+    <footer>FileFlow <span>·</span> A privacy-minded file toolkit starter</footer>
+  </main>
+  <script src="config.js"></script>\n  <script src="app.js"></script>
+</body>
+</html>
